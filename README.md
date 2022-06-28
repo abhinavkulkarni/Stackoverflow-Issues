@@ -8,11 +8,6 @@ endpoint on 2nd API.
 To reproduce the steps, please follow the steps below:
 
 ```
-# git clone this repo
-
-# cd into the repo
-cd FastAPI-Issues
-
 # Find out host's internal IP
 HOST_IP=$(hostname -I)
 echo "Host IP: $HOST_IP"
