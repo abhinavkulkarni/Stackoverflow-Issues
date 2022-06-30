@@ -4,6 +4,7 @@ from fastapi import FastAPI
 import uvicorn
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
+import httpx
 
 app = FastAPI()
 
@@ -22,5 +23,5 @@ async def index1():
 
 @app.get("/index")
 async def index2():
-    return RedirectResponse(url=f"{os.getenv('MYAPI1_URL')}/index")
-
+    myapi1_url = os.getenv("MYAPI1_URL")
+    return RedirectResponse(url=f"{myapi1_url}/index")

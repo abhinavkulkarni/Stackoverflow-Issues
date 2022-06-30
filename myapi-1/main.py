@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 from starlette.middleware.cors import CORSMiddleware
+from starlette.responses import JSONResponse
 
 app = FastAPI()
 
@@ -15,4 +16,4 @@ app.add_middleware(
 @app.get("/")
 @app.get("/index")
 async def index():
-    return {"message": "Welcome to my API 1!"}
+    return JSONResponse(content={"message": "Welcome to my API 1!"}, status_code=200)
